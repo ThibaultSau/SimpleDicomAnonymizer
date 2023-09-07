@@ -32,7 +32,7 @@ jobs:
       - name: Env setup
         run: |
           pip install --upgrade pip
-          pip install -r installer-requirements.txt
+          pip install -r requirements.txt
       
 
       # Runs a set of commands using the runners shell

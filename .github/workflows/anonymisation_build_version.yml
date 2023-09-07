@@ -1,0 +1,62 @@
+# This is a basic workflow to help you get started with Actions
+
+name: anonymisation_build_version
+
+# Controls when the action will run. 
+on:
+  push:
+    branches: 
+      - main
+    tags: 
+      - "v*"
+  pull_request:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  tagged-release:
+    # The type of runner that the job will run on
+    runs-on: windows-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name : Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      # Runs a single command using the runners shell
+      - name: Env setup
+        run: |
+          pip install --upgrade pip
+          pip install -r installer-requirements.txt
+      
+
+      # Runs a set of commands using the runners shell
+      - name: Build
+        shell: powershell
+        run: |
+          pyinstaller Anonymisation.py 
+          copy setup\corr_names.txt  dist
+          copy setup\extra_rules.txt dist
+          copy setup\folder.txt dist
+          copy setup\out_folder.txt dist
+          Compress-Archive -Path dist\ -DestinationPath dist.zip -Verbose
+          
+      - name: Automatic Releases
+      # You may pin to the exact commit or the version.
+      # uses: marvinpinto/action-automatic-releases@8d9ddb2546e687f72855285d2719a11709cea6d0
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          # GitHub secret token
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          prerelease: false #optional, default is true
+          # Should this release be marked as a draft?
+          draft: false #optional
+          # Release title (for automatic releases)
+          title: Script Anonymisation #optional
+          # Assets to upload to the release
+          files: dist.zip

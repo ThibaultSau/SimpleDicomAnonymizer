@@ -1,0 +1,36 @@
+# virtualenvs dir
+venv/
+installer/
+
+checkpoints/
+.ipynb_checkpoints/
+iaPACS.egg-info/
+.pytest_cache/
+*.egg-info/
+
+data/
+
+build/
+dist*/
+
+# textes, CR, présentations, et autres fichiers non versionnables
+misceleanous/
+scripts/
+figures/
+
+*.ipynb
+
+*.dcm
+
+*.jpg
+*.png
+*.xml
+
+**/__pycache__
+
+*.spec
+*.log
+*.zip
+*.pkl
+*.html
+*.csv

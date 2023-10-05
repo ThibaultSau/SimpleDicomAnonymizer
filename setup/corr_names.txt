@@ -1,1 +1,1 @@
-Nom,Nom anonymisé
+Name, Anonymized Name

@@ -9,9 +9,10 @@
 (8, 51);empty;Content Time
 (8, 80);empty;Accession Number
 (8, 96);keep;Modality
-(8, 112);empty;Manufacturer
+(8, 112);keep;Manufacturer
 (8, 144);empty;Referring Physician's Name
 (8, 4158);keep;Series Description
+(8, 4240);keep;Manufacturer Model Name
 (16, 16);anonymize_name;Patient Name
 (16, 32);anonymize_name;Patient ID
 (16, 48);change_year;Patient's Birth Date
@@ -19,19 +20,30 @@
 (24, 16);keep;Contrast/Bolus Agent
 (24, 32);keep;Scanning Sequence
 (24, 33);keep;Sequence Variant
-(24, 34);empty;Scan Options
+(24, 34);keep;Scan Options
 (24, 35);keep;MR Acquisition Type
+(24, 33);keep;Sequence Variant
 (24, 80);keep;Slice Thickness
 (24, 128);keep;Repetition Time
 (24, 129);keep;Echo Time
 (24, 130);keep;Inversion Time
+(24, 131);keep;Number of Averages
+(24, 133);keep;Imaged Nucleus
 (24, 135);keep;Magnetic Field Strength
 (24, 136);keep;Spacing Between Slices
 (24, 145);keep;Echo Train Length
 (24, 1030);replace;Protocol Name
+(24, 4176);keep;Spatial Resolution
+(24, 4352);keep;Reconstruction Diameter
+(24, 4884);keep;Flip Angle
+(24, 20736);keep;Patient Position
 (32, 13);replace;Study Instance UID
 (32, 14);replace;Series Instance UID
+(32, 17);keep;Series Number
+(32, 18);keep;Acquisition Number
 (32, 19);keep;Instance Number
+(32, 32);keep;Patient Orientation
+(32, 50);keep;Image Position (Patient)
 (32, 55);keep;Image Orientation (Patient)
 (32, 4098);keep;Images in Acquisition
 (32, 4161);keep;Slice Location
@@ -40,13 +52,11 @@
 (40, 16);keep;Rows
 (40, 17);keep;Columns
 (40, 48);keep;Pixel Spacing
+(40, 52);keep;Pixel Aspect Ratio
 (40, 256);keep;Bits Allocated
 (40, 257);keep;Bits Stored
 (40, 258);keep;High Bit
 (40, 259);keep;Pixel Representation
 (136, 512);keep;Icon Image Sequence
-(32736, 16);keep;Pixel Data
 (1953, 4098);keep;Number of images in series
-(32, 17);keep;Series Number
-(32, 18);keep;Acquisition Number
-(32, 50);keep;Image Position (Patient)
+(32736, 16);keep;Pixel Data

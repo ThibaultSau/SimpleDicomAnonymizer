@@ -42,6 +42,7 @@ jobs:
           copy setup\extra_rules.txt dist
           copy setup\folder.txt dist
           copy setup\out_folder.txt dist
+          copy README.md dist
           Compress-Archive -Path dist\ -DestinationPath dist.zip -Verbose
           
       - name: Automatic Releases

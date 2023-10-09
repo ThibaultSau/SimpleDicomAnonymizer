@@ -28,3 +28,8 @@ These files must be setup before launching the programm.
 ## Script behavior
 
 The script will respect the directory structure of the input folders until a patient is reached (a folder is a patient folder if its name is present on the corr_name.txt file), then all DICOM files will be written directly under the patient folder. Any non-DICOM files will be ignored.
+
+## Acknowledgment
+
+To complete
+

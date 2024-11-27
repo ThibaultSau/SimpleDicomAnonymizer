@@ -1,6 +1,6 @@
-# SimpleDicomAnonymizer
+# DataCurator
 
-Python script made for anonymizing DICOM data. Works on an allow list fashion, meaning you must specifiy all DICOM tags that needs to be kept and the way they should be.
+Python script made for curating, normalising and anonymising DICOM data. Works on an allow list fashion, meaning you must specifiy all DICOM tags that needs to be kept and the way they should be treated if kept.
 
 ## How to install
 

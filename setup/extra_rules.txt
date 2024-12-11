@@ -16,7 +16,7 @@
 (16, 16);anonymize_name;Patient Name
 (16, 32);anonymize_name;Patient ID
 (16, 48);change_year;Patient's Birth Date
-(16, 64);replace;Patient's Sex
+(16, 64);empty;Patient's Sex
 (24, 16);keep;Contrast/Bolus Agent
 (24, 32);keep;Scanning Sequence
 (24, 33);keep;Sequence Variant
